@@ -1,0 +1,69 @@
+Dev Note - 2026-03-28T18:31:00.456Z
+========================================
+
+📅 DAILY DEV LOG
+================
+
+1. 🌅 DAY SUMMARY 
+Today was a pretty productive Sunday, I managed to squeeze in about 8 hours of coding and learning. I worked on a new feature for my personal project, a task manager application, and made some good progress. The day was quite energizing, and I felt motivated to tackle some challenging problems. I also took a few breaks to refresh my mind and recharge. Overall, it was a great day as a developer, and I'm feeling quite satisfied with what I've accomplished.
+
+2. 🛠️ WHAT I BUILT / WORKED ON TODAY 
+I spent most of my day working on a new feature for my task manager application, which involves integrating a calendar view to display upcoming tasks. I used React for the frontend and Node.js with Express for the backend. I faced some challenges while trying to sync the calendar with the task data, but I managed to overcome them by using a library called FullCalendar. It provides a lot of customization options and made it easier to integrate with my application. I also had to write some custom logic to handle task reminders and notifications.
+
+The technologies I used today include JavaScript, React, Node.js, Express, and FullCalendar. I have to say, it was a bit tricky to get everything working together seamlessly, but it was a great learning experience. I had to debug some issues with the calendar not rendering correctly, but I eventually figured out the problem and fixed it.
+
+3. 📚 WHAT I LEARNED TODAY 
+Today, I learned about the concept of memoization in programming. Memoization is an optimization technique where you store the results of expensive function calls so that you don't have to repeat them. This can be particularly useful when dealing with recursive functions or functions that perform complex calculations. I learned how to implement memoization using a library called Lodash, which provides a memoize function that makes it easy to cache function results.
+
+Memoization is useful because it can significantly improve the performance of your application by reducing the number of unnecessary computations. It's a simple yet powerful technique that can be applied to a wide range of problems. I'm excited to start using it in my own projects to see the benefits for myself.
+
+4. 💡 DAILY CODE PROBLEM 
+**Problem Title:** Valid Palindrome
+**Difficulty:** Easy
+**Problem Statement:** Given a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring case.
+**Example Input and Output:** 
+Input: "A man, a plan, a canal: Panama"
+Output: true
+Input: "Not a palindrome"
+Output: false
+
+My approach to this problem was to use a two-pointer technique, where I start from the beginning and end of the string and move towards the center. I ignore any non-alphanumeric characters and compare the characters at the current positions. If I find any pair of characters that don't match, I return false. If I successfully compare all pairs of characters without finding any mismatches, I return true.
+
+Here is the full working solution in JavaScript:
+```javascript
+function isPalindrome(s) {
+    s = s.toLowerCase();
+    let left = 0;
+    let right = s.length - 1;
+    while (left < right) {
+        if (!isAlphanumeric(s[left])) {
+            left++;
+        } else if (!isAlphanumeric(s[right])) {
+            right--;
+        } else {
+            if (s[left] !== s[right]) {
+                return false;
+            }
+            left++;
+            right--;
+        }
+    }
+    return true;
+}
+
+function isAlphanumeric(c) {
+    return (c >= 'a' && c <= 'z') || (c >= '0' && c <= '9');
+}
+```
+The time complexity of this solution is O(n), where n is the length of the string, and the space complexity is O(1), since we only use a constant amount of space.
+
+5. 🐛 BUG OF THE DAY 
+Today, I encountered a bug where my application was throwing a "Cannot read property of undefined" error. This was because I was trying to access a property of an object that didn't exist. The reason this was happening was that I was using an optional chaining operator (?.) incorrectly. I didn't realize that the operator only works if the previous property is undefined or null, but not if it's an empty object.
+
+To fix this bug, I had to add a check to make sure the object exists before trying to access its properties. I also learned that it's always a good idea to use the optional chaining operator with caution and to test your code thoroughly to catch any potential errors.
+
+6. 🔥 DEVELOPER TIP OF THE DAY 
+One powerful tip I want to share is to always use a linter and a code formatter in your development workflow. A linter can help you catch syntax errors and enforce coding standards, while a code formatter can make your code look consistent and readable. This can save you a lot of time and effort in the long run, and it's especially useful when working on large projects or collaborating with others.
+
+7. 🎯 TOMORROW'S GOALS 
+Tomorrow, I plan to work on implementing authentication and authorization in my task manager application. I want to use a library like Passport.js to handle user authentication and authorization. I'm excited to learn more about security and authentication in web development, and I'm looking forward to the challenges that come with it. I'm also planning to write some unit tests to ensure that my application is working correctly and to catch any potential bugs.

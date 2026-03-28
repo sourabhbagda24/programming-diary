@@ -1,0 +1,89 @@
+Dev Note - 2026-03-28T07:52:53.715Z
+========================================
+
+📅 DAILY DEV LOG
+================
+
+1. 🌅 DAY SUMMARY
+   Today, I worked on a few different projects, but mainly focused on improving my problem-solving skills by tackling a few challenging coding problems on LeetCode. 
+   I'd say the day was fairly productive, with around 6 hours of solid coding and learning. 
+   My overall mood and energy as a developer are high, as I feel like I'm making progress and expanding my skill set. 
+   There's nothing quite like the feeling of finally figuring out a tricky problem to keep you motivated and excited for the next challenge. 
+   I did take a few breaks to relax and recharge, but overall, it was a great day of learning and growth. 
+   As I reflect on the day's work, I'm pleased with what I've accomplished and I'm already looking forward to tomorrow's opportunities. 
+   The sense of accomplishment is a great feeling, and it's what drives me to keep pushing myself as a developer.
+
+2. 🛠️ WHAT I BUILT / WORKED ON TODAY
+   Today, I worked on a feature for a personal project that involves natural language processing and machine learning. 
+   I used Python as the primary language, along with libraries like NLTK and scikit-learn for the NLP tasks. 
+   One of the challenges I faced was dealing with out-of-vocabulary words, which required some creative problem-solving to handle effectively. 
+   After researching and experimenting with different approaches, I found a solution that works well for my specific use case. 
+   I also spent some time optimizing the performance of the model, which involved tweaking hyperparameters and testing different configurations. 
+   It was a great learning experience, as I gained a deeper understanding of how the different components of the model interact and impact the overall performance. 
+   I'm excited to continue working on this project and see where it takes me. 
+   The technologies used were Python, NLTK, scikit-learn, and TensorFlow. 
+   I'm happy with the progress I made today, and I'm looking forward to building on this momentum tomorrow.
+
+3. 📚 WHAT I LEARNED TODAY
+   Today, I learned about the concept of word embeddings and how they can be used in NLP tasks. 
+   Word embeddings are a way of representing words as vectors in a high-dimensional space, where semantically similar words are closer together. 
+   This allows for more nuanced and context-sensitive understanding of language, which is essential for many NLP applications. 
+   I learned about different techniques for creating word embeddings, such as Word2Vec and GloVe, and how to use them in my own projects. 
+   I also learned about the importance of preprocessing and normalization when working with text data. 
+   It's amazing how much of a difference these techniques can make in the performance of a model. 
+   I'm excited to apply this knowledge to future projects and see the impact it has. 
+   Learning about word embeddings has opened up a whole new world of possibilities for me, and I'm eager to explore them further.
+
+4. 💡 DAILY CODE PROBLEM
+   Problem title: "Container With Most Water"
+   Difficulty: Medium
+   Problem statement: Given n non-negative integers a1, a2, ..., an, where each represents a point at coordinate (i, ai). 
+   n vertical lines are drawn such that the two endpoints of the line i is at (i, ai) and (i, 0). 
+   Find two lines, which, together with the x-axis forms a container, such that the area of water it contains is maximized.
+   Example input: [1,8,6,2,5,4,8,3,7]
+   Example output: 49
+   My approach and thought process: 
+   To solve this problem, I used a two-pointer technique, where one pointer starts at the beginning of the array and the other at the end. 
+   I calculated the area of water that can be trapped between the two lines at each position, and then moved the pointer that corresponds to the shorter line towards the other pointer. 
+   This ensures that we are always considering the maximum possible area at each step. 
+   Here is the full working solution in Python:
+   ```python
+def maxArea(height):
+    max_area = 0
+    left = 0
+    right = len(height) - 1
+    while left < right:
+        width = right - left
+        height_min = min(height[left], height[right])
+        area = width * height_min
+        max_area = max(max_area, area)
+        if height[left] < height[right]:
+            left += 1
+        else:
+            right -= 1
+    return max_area
+   ```
+   Time complexity: O(n), where n is the number of lines
+   Space complexity: O(1), as we only use a constant amount of space
+   This problem was a great exercise in thinking creatively and using the right data structures and algorithms to solve a complex problem.
+
+5. 🐛 BUG OF THE DAY
+   Today, I encountered a bug where my model was not converging during training. 
+   After some debugging, I realized that the issue was due to a mismatch between the data types of the input and output tensors. 
+   This was causing the model to produce NaN values, which were then being propagated through the network and causing the convergence issues. 
+   To fix this, I made sure to cast the input and output tensors to the same data type, which resolved the issue. 
+   It was a simple mistake, but it took some time to track down and fix. 
+   I learned the importance of careful data type management when working with deep learning models.
+
+6. 🔥 DEVELOPER TIP OF THE DAY
+   One powerful tip I can share is the importance of using a consistent coding style throughout your projects. 
+   This makes it easier to read and understand your code, which is essential for collaboration and maintenance. 
+   I recommend using a linter or code formatter to enforce a consistent style and catch any errors or warnings. 
+   This can save a lot of time and headache in the long run.
+
+7. 🎯 TOMORROW'S GOALS
+   Tomorrow, I plan to work on implementing a new feature for my personal project that involves using computer vision techniques to analyze images. 
+   I'll be using the OpenCV library to handle the image processing tasks. 
+   I'm excited to dive deeper into this area and see what I can create. 
+   I'm also looking forward to continuing to learn and grow as a developer, and I'm eager to take on new challenges and opportunities. 
+   Bring it on!

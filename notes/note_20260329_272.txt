@@ -1,0 +1,60 @@
+Dev Note - 2026-03-29T18:30:59.201Z
+========================================
+
+📅 DAILY DEV LOG
+================
+
+1. 🌅 DAY SUMMARY
+   - Today was a pretty productive Monday, I worked on several tasks and managed to complete most of them. I spent a significant amount of time debugging a tricky issue in our application, but eventually, I was able to resolve it. 
+   - The day started with a team meeting to discuss our project's progress, and then I dived into coding. 
+   - Overall, I'd say my mood and energy as a developer were high, as I enjoy solving complex problems and learning new things.
+
+2. 🛠️ WHAT I BUILT / WORKED ON TODAY
+   - Today, I worked on implementing a new feature in our web application using React, Node.js, and MongoDB. The feature allows users to upload and share files with their colleagues.
+   - I used JavaScript, HTML, and CSS to build the frontend, while Node.js and Express.js handled the backend logic. MongoDB was used for storing and retrieving file metadata.
+   - I faced some challenges with handling large file uploads and optimizing database queries, but I was able to overcome them by using streaming and indexing techniques.
+   - It was a great experience, as I got to learn more about file handling and database optimization.
+
+3. 📚 WHAT I LEARNED TODAY
+   - Today, I learned about the concept of streaming in Node.js, which allows handling large amounts of data without loading them into memory. 
+   - This is particularly useful when dealing with large file uploads or processing big data sets. 
+   - I also learned about MongoDB indexing, which improves query performance by allowing the database to quickly locate specific data.
+   - Understanding these concepts will be beneficial in building scalable and efficient applications.
+
+4. 💡 DAILY CODE PROBLEM
+   - **Problem Title:** "Two Sum"
+   - **Difficulty:** Easy
+   - **Problem Statement:** Given an array of integers `nums` and an integer `target`, return indices of the two numbers such that they add up to `target`.
+   - **Example Input:** `nums = [2, 7, 11, 15], target = 9`
+   - **Example Output:** `[0, 1]` (because `nums[0] + nums[1] == 9`)
+   - My approach was to use a hash table to store the numbers and their indices, and then iterate through the array to find the pair that adds up to the target.
+   - Here's the full working solution in JavaScript:
+     ```javascript
+     function twoSum(nums, target) {
+       const numToIndex = {};
+       for (let i = 0; i < nums.length; i++) {
+         const complement = target - nums[i];
+         if (complement in numToIndex) {
+           return [numToIndex[complement], i];
+         }
+         numToIndex[nums[i]] = i;
+       }
+       return null;
+     }
+     ```
+   - Time complexity: O(n), where n is the length of the input array.
+   - Space complexity: O(n), where n is the length of the input array.
+
+5. 🐛 BUG OF THE DAY
+   - Today, I encountered a bug where our application was throwing an error when trying to upload a file with a special character in its name.
+   - The issue was caused by the fact that our file handling logic was not properly encoding the file name.
+   - To fix this, we need to use a library like `path` in Node.js to properly encode and decode file paths.
+
+6. 🔥 DEVELOPER TIP OF THE DAY
+   - One powerful tip I can share is to always use a linter and a code formatter in your development workflow. 
+   - Tools like ESLint and Prettier help catch errors and enforce consistent coding standards, which improves code quality and maintainability.
+
+7. 🎯 TOMORROW'S GOALS
+   - Tomorrow, I plan to work on implementing a new authentication feature in our application using OAuth and JWT.
+   - I'll also spend some time reviewing and refactoring our codebase to improve performance and readability.
+   - Additionally, I'll continue learning about GraphQL and how to integrate it with our existing API.

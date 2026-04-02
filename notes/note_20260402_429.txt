@@ -1,0 +1,77 @@
+Dev Note - 2026-04-02T18:31:00.470Z
+========================================
+
+📅 DAILY DEV LOG
+================
+
+1. 🌅 DAY SUMMARY 
+   - Today was a highly productive day, I worked on implementing a new feature for our company's web application, which involved creating a responsive dashboard using React and Redux. 
+   - The day was quite busy, but I managed to complete all the tasks I had planned, and I'm feeling satisfied with my progress. 
+   - My overall mood and energy as a developer are positive, and I'm excited to tackle more challenging tasks in the future. 
+   - I attended a few meetings, which helped me stay aligned with the team's goals and objectives. 
+   - I also spent some time reviewing code and providing feedback to my colleagues, which is an essential part of our team's collaborative workflow. 
+   - Despite the long hours, I maintained my focus and stayed motivated throughout the day.
+
+2. 🛠️ WHAT I BUILT / WORKED ON TODAY 
+   - I worked on creating a responsive dashboard that displays key performance indicators (KPIs) for our company's web application. 
+   - The dashboard is built using React, Redux, and CSS Grid, which allows for a flexible and responsive layout. 
+   - I used the React Query library to fetch data from our API and store it in the Redux state. 
+   - One of the challenges I faced was optimizing the performance of the dashboard, as it was rendering a large amount of data. 
+   - To solve this, I implemented a pagination system and used React's useMemo hook to memoize the data. 
+   - I also used the Redux DevTools to debug and optimize the state management of the application. 
+   - The technologies used in this project include JavaScript, React, Redux, CSS Grid, and React Query. 
+   - The feature is now complete and ready for testing and deployment.
+
+3. 📚 WHAT I LEARNED TODAY 
+   - Today, I learned about the concept of memoization in React, which is a technique used to optimize the performance of functional components. 
+   - Memoization involves caching the results of expensive function calls so that they can be reused instead of recalculated. 
+   - I learned how to use the useMemo hook in React to memoize data and functions. 
+   - This is a useful technique for optimizing the performance of applications that render large amounts of data. 
+   - I also learned about the importance of debugging and testing in software development, as it helps identify and fix bugs early on. 
+   - Additionally, I learned about the benefits of using a state management library like Redux, which helps manage global state by providing a single source of truth.
+
+4. 💡 DAILY CODE PROBLEM 
+   - Problem title: "First Duplicate" 
+   - Difficulty: Medium 
+   - Problem statement: Given an array of integers, find the first duplicate in the array. 
+   - Example input: [2, 1, 3, 4, 2] 
+   - Example output: 2 
+   - Approach: I used a hash set to store the elements of the array as I iterate through it. 
+   - If I encounter an element that is already in the hash set, I return that element as the first duplicate. 
+   - Here is the full working solution in JavaScript:
+     ```
+     function firstDuplicate(arr) {
+       const hashSet = new Set();
+       for (let i = 0; i < arr.length; i++) {
+         if (hashSet.has(arr[i])) {
+           return arr[i];
+         } else {
+           hashSet.add(arr[i]);
+         }
+       }
+       return -1;
+     }
+     ```
+   - Time complexity: O(n), where n is the length of the array. 
+   - Space complexity: O(n), where n is the length of the array. 
+   - This solution works by iterating through the array and checking if each element is already in the hash set. 
+   - If it is, we return that element as the first duplicate. 
+   - If not, we add the element to the hash set and continue iterating.
+
+5. 🐛 BUG OF THE DAY 
+   - Today, I encountered a bug where the dashboard was rendering incorrect data due to a mismatch in the API endpoint. 
+   - This happened because the API endpoint was changed recently, but the frontend code was not updated to reflect the change. 
+   - To fix this, I updated the API endpoint in the frontend code to match the new endpoint. 
+   - This bug was difficult to identify because it was not immediately apparent that the API endpoint had changed. 
+   - However, by using the Redux DevTools, I was able to inspect the state of the application and identify the issue.
+
+6. 🔥 DEVELOPER TIP OF THE DAY 
+   - One powerful tip I can offer is to always use a debugger or debugging tool when working on complex code. 
+   - This can help identify issues quickly and efficiently, saving time and reducing frustration. 
+   - Additionally, it's essential to write clean, modular, and well-documented code to make it easier to debug and maintain.
+
+7. 🎯 TOMORROW'S GOALS 
+   - Tomorrow, I plan to work on implementing a new feature for our mobile application, which involves creating a push notification system. 
+   - I will use a library like React Native Push Notification to implement the feature. 
+   - I will also review code and provide feedback to my colleagues to ensure our team's codebase is clean, modular, and well-documented. 
+   - Additionally, I will continue to learn and improve my skills in software development, focusing on areas like machine learning and data science.

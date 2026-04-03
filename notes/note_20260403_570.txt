@@ -1,0 +1,79 @@
+Dev Note - 2026-04-03T14:15:13.476Z
+========================================
+
+📅 DAILY DEV LOG
+================
+
+1. 🌅 DAY SUMMARY 
+   Today was a great day, I worked on refactoring the authentication module of our company's web application. The day was quite productive, and I managed to complete all the tasks I had planned. My overall mood and energy as a developer were high, partly because I was able to solve a challenging bug that had been bothering me for a while. I also had a chance to learn about a new library that can help improve the performance of our application. The weather outside was nice, which always helps to boost my mood. I'm feeling motivated and ready to take on new challenges. 
+
+2. 🛠️ WHAT I BUILT / WORKED ON TODAY 
+   I worked on the authentication module, which involves implementing login, registration, and password recovery features. The technologies used were JavaScript, React, and Node.js. One of the challenges I faced was optimizing the login feature to reduce latency. To solve this, I used a caching mechanism to store the user's credentials. This way, when the user logs in again, the credentials can be retrieved from the cache instead of querying the database. I also used a library called 'bcrypt' to hash the passwords, which adds an extra layer of security. Another challenge was implementing password recovery using a token-based system. I used JSON Web Tokens (JWT) to generate tokens that can be used to verify the user's identity. 
+
+3. 📚 WHAT I LEARNED TODAY 
+   Today, I learned about a new library called 'Redis', which is an in-memory data store that can be used as a caching layer. It's very useful for optimizing the performance of web applications by reducing the number of database queries. I learned how to install and configure Redis, and how to use it with Node.js. The library is very easy to use, and it has a lot of features that make it suitable for large-scale applications. I also learned about the concept of 'caching', which is the process of storing frequently accessed data in a faster, more accessible location. This can greatly improve the performance of an application by reducing the time it takes to retrieve data. 
+
+4. 💡 DAILY CODE PROBLEM 
+   Problem title: 'Valid Anagram'
+   Difficulty: Easy
+   Problem statement: Given two strings, determine if one is an anagram of the other.
+   Example input: str1 = "listen", str2 = "silent"
+   Example output: true
+   Approach: To solve this problem, we can use a sorting algorithm to sort the characters in each string and then compare the sorted strings. If they are equal, then the original strings are anagrams of each other. 
+   Another approach is to use a hash table to count the frequency of each character in the strings. If the frequency counts are equal, then the strings are anagrams.
+   Here is the full working solution in JavaScript:
+   ```javascript
+   function isAnagram(str1, str2) {
+       // Remove any white spaces and convert to lower case
+       str1 = str1.replace(/\s/g, "").toLowerCase();
+       str2 = str2.replace(/\s/g, "").toLowerCase();
+
+       // If the lengths are not equal, return false
+       if (str1.length !== str2.length) {
+           return false;
+       }
+
+       // Create a hash table to count the frequency of each character
+       let charCount = {};
+
+       // Count the frequency of each character in str1
+       for (let char of str1) {
+           if (char in charCount) {
+               charCount[char]++;
+           } else {
+               charCount[char] = 1;
+           }
+       }
+
+       // Subtract the frequency of each character in str2
+       for (let char of str2) {
+           if (char in charCount) {
+               charCount[char]--;
+           } else {
+               return false;
+           }
+       }
+
+       // If all counts are zero, return true
+       for (let count in charCount) {
+           if (charCount[count] !== 0) {
+               return false;
+           }
+       }
+
+       return true;
+   }
+
+   console.log(isAnagram("listen", "silent"));  // Output: true
+   ```
+   Time complexity: O(n log n) due to the sorting, or O(n) using the hash table approach.
+   Space complexity: O(n) for the hash table.
+
+5. 🐛 BUG OF THE DAY 
+   Today, I encountered a bug where the application would crash when a user tried to log in with an empty password. The reason for this bug was that the password validation function was not checking for empty strings. To fix this, I added a simple check to ensure that the password is not empty before attempting to hash it. This is a common bug that can be easily overlooked, but it's essential to handle all possible edge cases to ensure the application is secure and reliable.
+
+6. 🔥 DEVELOPER TIP OF THE DAY 
+   One powerful tip is to always use a linter and a code formatter when writing code. This helps to maintain a consistent coding style and catches any syntax errors or potential bugs early on. It's also essential to write unit tests for your code to ensure it's working as expected. 
+
+7. 🎯 TOMORROW'S GOALS 
+   Tomorrow, I plan to work on implementing a new feature that allows users to upload files to the application. I will use a library called 'Multer' to handle the file uploads, and I will also implement validation to ensure that only allowed file types are uploaded. I'm looking forward to tackling this new challenge and learning more about file uploads in Node.js.

@@ -1,0 +1,58 @@
+Dev Note - 2026-04-03T14:22:28.119Z
+========================================
+
+📅 DAILY DEV LOG
+================
+
+1. 🌅 DAY SUMMARY 
+   Today was a highly productive day, and I'm feeling quite satisfied with the progress I made. I worked on implementing a new feature for our company's web application, which involved a lot of problem-solving and debugging. My energy levels were high throughout the day, and I was fully engaged in the tasks at hand. The sense of accomplishment I feel now is great, and it's a wonderful way to end the week. I'm looking forward to the weekend to recharge and come back stronger on Monday. The day was filled with learning and growth, and I'm excited to reflect on it. I'd say my overall mood and energy as a developer today were quite positive.
+
+2. 🛠️ WHAT I BUILT / WORKED ON TODAY 
+   I spent most of the day working on a feature that allows users to upload and display images on their profiles. This involved using HTML, CSS, and JavaScript to create a user-friendly interface, as well as backend technologies like Node.js and MongoDB to store and retrieve the images. One of the challenges I faced was handling image resizing and compression to ensure that the uploaded images didn't overload the server. I solved this by using a library called Sharp, which allowed me to easily resize and compress the images on the fly. I also had to implement error handling and validation to ensure that only valid images were uploaded. This feature is crucial for our application, and I'm happy to have made significant progress on it. The technologies used were quite diverse, and I enjoyed the opportunity to work on both frontend and backend aspects. 
+
+3. 📚 WHAT I LEARNED TODAY 
+   Today, I learned about the Sharp library and how to use it to resize and compress images in Node.js. This library is incredibly useful because it provides a simple and efficient way to handle image processing tasks. I learned how to install it using npm, and how to use its various functions to resize, compress, and format images. I also learned about the importance of image compression and how it can significantly improve the performance of a web application. This knowledge is useful because it allows me to optimize the images used in our application, which can lead to faster page loads and a better user experience. I'm excited to apply this knowledge to future projects and continue learning about image processing and optimization. The more I learn about it, the more I realize how crucial it is for web development.
+
+4. 💡 DAILY CODE PROBLEM 
+   **Problem Title:** Reverse Linked List
+   **Difficulty:** Easy
+   **Problem Statement:** Given the head of a singly linked list, reverse the list and return the reversed list.
+   **Example Input and Output:**
+   Input: head = [1,2,3,4,5]
+   Output: [5,4,3,2,1]
+   My approach to this problem was to use a simple iterative method to reverse the linked list. I initialized three pointers: previous, current, and next. I set the previous pointer to null and the current pointer to the head of the list. Then, I iterated through the list, reversing the direction of the pointers as I went. Here is the full working solution in JavaScript:
+   ```
+   /**
+    * Definition for singly-linked list.
+    * function ListNode(val, next) {
+    *     this.val = (val===undefined ? 0 : val)
+    *     this.next = (next===undefined ? null : next)
+    * }
+    */
+   /**
+    * @param {ListNode} head
+    * @return {ListNode}
+    */
+   var reverseList = function(head) {
+       let prev = null;
+       let curr = head;
+       while (curr !== null) {
+           let nextTemp = curr.next;
+           curr.next = prev;
+           prev = curr;
+           curr = nextTemp;
+       }
+       return prev;
+   };
+   ```
+   The time complexity of this solution is O(n), where n is the number of nodes in the linked list, and the space complexity is O(1) because we only use a constant amount of space to store the pointers.
+   I chose this problem because it's a classic example of a linked list operation, and it's a great way to practice iterative solutions. The solution is also relatively simple, making it easy to understand and implement.
+
+5. 🐛 BUG OF THE DAY 
+   Today, I encountered a bug where the image upload feature was throwing an error when trying to upload a file with a non-standard extension. This was happening because the validation function was not correctly handling non-standard file types. To fix this, I updated the validation function to check for a wider range of file extensions, and I also added error handling to catch and display any errors that may occur during the upload process. This bug was worth noting because it highlights the importance of thorough validation and error handling in ensuring a smooth user experience.
+
+6. 🔥 DEVELOPER TIP OF THE DAY 
+   One powerful tip I learned today is to always test my code thoroughly before deploying it to production. This includes testing for different scenarios, edge cases, and error handling. By doing so, I can catch and fix bugs early on, which can save a lot of time and effort in the long run. It's also essential to write clean, readable, and maintainable code, as this makes it easier for others to understand and work with my code.
+
+7. 🎯 TOMORROW'S GOALS 
+   Tomorrow, I plan to continue working on the image upload feature and implement some additional functionality, such as image cropping and filtering. I also want to review and refactor some of the existing code to make it more efficient and maintainable. Additionally, I aim to learn more about web performance optimization and how to improve the overall speed and responsiveness of our application. I'm excited to dive deeper into these topics and make significant progress on our project.

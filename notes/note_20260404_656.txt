@@ -1,0 +1,93 @@
+Dev Note - 2026-04-04T13:26:52.712Z
+========================================
+
+📅 DAILY DEV LOG
+================
+
+1. 🌅 DAY SUMMARY 
+   - Today was a productive Saturday, and I'm feeling accomplished as a developer. 
+   - I spent most of the day working on a new feature for a personal project, focusing on implementing a robust authentication system.
+   - The day was filled with learning and overcoming challenges, which kept me engaged and motivated.
+   - I took a few breaks to recharge and stay focused, and overall, I'm satisfied with what I achieved.
+   - My energy levels were high, and I'm eager to tackle more complex problems.
+   - The sense of fulfillment I get from coding is incredible, and I'm grateful for another day of growth.
+
+2. 🛠️ WHAT I BUILT / WORKED ON TODAY
+   - Today, I worked on implementing authentication using JSON Web Tokens (JWT) in a React application.
+   - I used Node.js and Express.js to create the backend API, and Redis for storing session data.
+   - One of the challenges I faced was handling token expiration and refresh tokens.
+   - To solve this, I used a library called `jsonwebtoken` to generate and verify tokens, and implemented a token refresh mechanism using Redis.
+   - I also had to handle errors and edge cases, such as token expiration and invalid credentials.
+   - After several hours of debugging and testing, I finally got the authentication system working seamlessly.
+   - I used Postman to test the API endpoints and verified that the authentication system is secure and functional.
+
+3. 📚 WHAT I LEARNED TODAY
+   - Today, I learned about the concept of JWT and how it works.
+   - I understood the importance of token expiration and refresh tokens in maintaining session security.
+   - I also learned about the `jsonwebtoken` library and how to use it to generate and verify tokens.
+   - I realized that authentication is a critical aspect of any application, and it's essential to get it right.
+   - I learned about the different types of authentication mechanisms, such as session-based and token-based authentication.
+   - I gained hands-on experience with implementing authentication in a real-world application, which was invaluable.
+
+4. 💡 DAILY CODE PROBLEM
+   - **Problem Title:** Find the Middle Element of a Linked List
+   - **Difficulty:** Easy
+   - **Problem Statement:** Given a singly linked list, find the middle element.
+   - **Example Input:** 1 -> 2 -> 3 -> 4 -> 5
+   - **Example Output:** 3
+   - **Approach:** To solve this problem, I used the slow and fast pointer technique. The slow pointer moves one step at a time, while the fast pointer moves two steps at a time. When the fast pointer reaches the end of the list, the slow pointer will be at the middle element.
+   - **Full Working Solution (Python):**
+     ```python
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+
+    def append(self, data):
+        new_node = Node(data)
+        if not self.head:
+            self.head = new_node
+            return
+        current = self.head
+        while current.next:
+            current = current.next
+        current.next = new_node
+
+    def find_middle(self):
+        slow = self.head
+        fast = self.head
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+        return slow.data
+
+ll = LinkedList()
+ll.append(1)
+ll.append(2)
+ll.append(3)
+ll.append(4)
+ll.append(5)
+print(ll.find_middle())  # Output: 3
+```
+   - **Time Complexity:** O(n), where n is the number of elements in the linked list.
+   - **Space Complexity:** O(1), as we only use a constant amount of space.
+
+5. 🐛 BUG OF THE DAY
+   - Today, I encountered a bug where the authentication system was not handling token expiration correctly.
+   - The bug occurred because I was not checking for token expiration before verifying the token.
+   - To fix this, I added a check for token expiration before verifying the token, and handled the case where the token has expired.
+   - I also made sure to handle the case where the token is invalid or malformed.
+
+6. 🔥 DEVELOPER TIP OF THE DAY
+   - One powerful tip I learned today is to always handle errors and edge cases when implementing authentication.
+   - This includes handling token expiration, invalid credentials, and other potential issues that may arise.
+   - By doing so, you can ensure that your authentication system is secure and robust.
+
+7. 🎯 TOMORROW'S GOALS
+   - Tomorrow, I plan to work on implementing authorization and role-based access control in my application.
+   - I will use a library called `casl` to handle permissions and access control.
+   - I'm excited to learn more about authorization and how to implement it in a real-world application.

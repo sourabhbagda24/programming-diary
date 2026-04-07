@@ -1,0 +1,75 @@
+Dev Note - 2026-04-07T08:43:55.511Z
+========================================
+
+📅 DAILY DEV LOG
+================
+
+1. 🌅 DAY SUMMARY 
+   - Today was a productive day, I worked on several tasks and made significant progress on my current project.
+   - I spent most of my time debugging and optimizing the code, which was a bit challenging but I managed to resolve the issues.
+   - Overall, my mood and energy as a developer were high, I felt motivated and focused throughout the day.
+   - I took regular breaks to refresh my mind and avoid burnout, which helped me stay concentrated.
+   - The day started with a team meeting to discuss the project's progress and plan the next steps.
+   - After the meeting, I dove into coding and debugging, and by the end of the day, I felt satisfied with what I had accomplished.
+
+2. 🛠️ WHAT I BUILT / WORKED ON TODAY 
+   - Today, I worked on a feature to implement a sorting algorithm for a large dataset.
+   - I used Python as the programming language and utilized the built-in sorting functions.
+   - The challenge I faced was optimizing the sorting function to handle large datasets efficiently.
+   - I solved this by using a combination of sorting algorithms, such as merge sort and quick sort, and also by utilizing multi-threading to parallelize the sorting process.
+   - I also used a library called Pandas, which provides data structures and functions to efficiently handle structured data.
+   - The project requires me to work with large datasets, so optimizing the sorting function was crucial to improve performance.
+   - I also worked on implementing error handling and logging mechanisms to ensure the code is robust and reliable.
+   - Overall, it was a productive day, and I'm happy with the progress I made on the project.
+
+3. 📚 WHAT I LEARNED TODAY 
+   - Today, I learned about a new library called NumPy, which provides support for large, multi-dimensional arrays and matrices.
+   - I learned how to use NumPy arrays to efficiently store and manipulate large datasets.
+   - NumPy is useful because it provides an efficient way to perform numerical computations, which is essential for scientific computing and data analysis.
+   - I also learned about the concept of vectorization, which allows you to perform operations on entire arrays at once, rather than using loops.
+   - Vectorization is useful because it can significantly improve the performance of numerical computations.
+   - I learned how to use NumPy's vectorized operations to perform common tasks, such as element-wise multiplication and matrix multiplication.
+   - I also learned about the importance of data alignment and how to use NumPy's functions to ensure proper alignment.
+
+4. 💡 DAILY CODE PROBLEM 
+   - Problem title: "Container With Most Water"
+   - Difficulty: Medium
+   - Problem statement: Given n non-negative integers a1, a2, ..., an, where each represents a point at coordinate (i, ai). n vertical lines are drawn such that the two endpoints of line i is at (i, ai) and (i, 0). Find two lines, which together with x-axis forms a container, such that the area of water it contains is the maximum.
+   - Example input: [1,8,6,2,5,4,8,3,7]
+   - Example output: 49
+   - Approach: Use a two-pointer technique to solve this problem. Initialize two pointers, one at the beginning and one at the end of the array. Calculate the area between the two pointers and update the maximum area. Move the pointer with the smaller height towards the other pointer.
+   - Full working solution in Python:
+     ```
+     def maxArea(height):
+         max_area = 0
+         left = 0
+         right = len(height) - 1
+         while left < right:
+             area = min(height[left], height[right]) * (right - left)
+             max_area = max(max_area, area)
+             if height[left] < height[right]:
+                 left += 1
+             else:
+                 right -= 1
+         return max_area
+     ```
+   - Time complexity: O(n), where n is the number of elements in the input array.
+   - Space complexity: O(1), which means the space required does not change with the size of the input array.
+   - This problem requires a good understanding of algorithms and data structures, as well as the ability to analyze the problem and come up with an efficient solution.
+
+5. 🐛 BUG OF THE DAY 
+   - Today, I encountered a bug where the code was throwing a "IndexError: list index out of range" error.
+   - This bug occurred because the code was trying to access an element in a list that did not exist.
+   - The reason for this bug was that the list was not being populated correctly, and the code was not checking if the list was empty before trying to access its elements.
+   - To fix this bug, I added a check to ensure that the list is not empty before trying to access its elements.
+
+6. 🔥 DEVELOPER TIP OF THE DAY 
+   - One powerful tip I can share is to always use a debugger to step through the code and understand what's happening.
+   - This can help identify bugs and issues quickly, and also provide a deeper understanding of the code.
+   - Another tip is to write tests for the code, which can help catch bugs and ensure that the code is working as expected.
+
+7. 🎯 TOMORROW'S GOALS 
+   - Tomorrow, I plan to work on implementing a new feature to handle user authentication.
+   - I will use a library called Flask-Login to handle user authentication and authorization.
+   - I will also work on implementing a UI component to display user information and handle user input.
+   - My goal is to complete the implementation of the user authentication feature by the end of the day.

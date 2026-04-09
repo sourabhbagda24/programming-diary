@@ -1,0 +1,50 @@
+Dev Note - 2026-04-09T15:15:06.137Z
+========================================
+
+📅 DAILY DEV LOG
+================
+
+1. 🌅 DAY SUMMARY
+   Today was a pretty productive day, I'd say. I worked on a few different tasks and made some good progress on a project I've been putting off for a while. My energy levels were high, and I was able to focus for long periods without getting distracted. I did take a few breaks to grab a snack and chat with some coworkers, but overall, I stayed on track and got a lot done. As a developer, it's days like these that remind me why I love my job - the sense of accomplishment and the feeling of creating something from scratch is really fulfilling. I'm feeling pretty motivated and excited to see where this project takes me. The morning started off a bit slow, but once I got into a groove, I was able to crank out some high-quality code. 
+
+2. 🛠️ WHAT I BUILT / WORKED ON TODAY
+   Today, I worked on implementing a new feature for a web application that allows users to filter and sort data in a table. I used JavaScript, HTML, and CSS to build the frontend, and Node.js and Express to handle the backend logic. One of the challenges I faced was figuring out how to optimize the filtering and sorting algorithms to work efficiently with large datasets. After some research and experimentation, I decided to use a combination of memoization and lazy loading to improve performance. I also had to troubleshoot some issues with the CSS layout, but overall, the feature is working as expected. The technologies used were JavaScript, HTML, CSS, Node.js, and Express. I spent some time reviewing the documentation for these technologies to make sure I was using them correctly. 
+
+3. 📚 WHAT I LEARNED TODAY
+   Today, I learned about a new JavaScript library called Lodash, which provides a lot of useful utility functions for working with arrays, objects, and functions. I was particularly interested in the `debounce` function, which allows you to limit the frequency at which a function is called. This can be really useful for optimizing performance in applications where users are interacting with the interface in real-time. I also learned about the concept of "throttling" and how it differs from debouncing. Throttling involves limiting the frequency at which a function is called, but it also ensures that the function is called at regular intervals, whereas debouncing only calls the function after a certain amount of time has passed since the last call. This library is useful because it provides a simple and efficient way to perform common tasks. 
+
+4. 💡 DAILY CODE PROBLEM
+   **Problem Title:** Validate Subsequence
+   **Difficulty:** Medium
+   **Problem Statement:** Given two arrays, determine if the second array is a subsequence of the first array. A subsequence is a sequence that can be derived from another sequence by deleting some elements without changing the order of the remaining elements.
+   **Example Input and Output:**
+   ```
+   array = [5, 1, 22, 25, 6, -1, 8, 10]
+   sequence = [1, 6, -1, 10]
+   Output: True
+   ```
+   My approach to solving this problem was to use a two-pointer technique. I initialized two pointers, one at the beginning of the array and one at the beginning of the sequence. Then, I iterated through the array, and whenever I found an element that matched the current element in the sequence, I moved the sequence pointer forward. If I reached the end of the sequence, I returned True, indicating that the sequence is a subsequence of the array. If I reached the end of the array without finding all the elements in the sequence, I returned False.
+   Here is the full working solution in JavaScript:
+   ```javascript
+   function isValidSubsequence(array, sequence) {
+     let arrIdx = 0;
+     let seqIdx = 0;
+     while (arrIdx < array.length && seqIdx < sequence.length) {
+       if (array[arrIdx] === sequence[seqIdx]) {
+         seqIdx++;
+       }
+       arrIdx++;
+     }
+     return seqIdx === sequence.length;
+   }
+   ```
+   The time complexity of this solution is O(n), where n is the length of the array, and the space complexity is O(1), since we only use a constant amount of space to store the pointers.
+
+5. 🐛 BUG OF THE DAY
+   Today, I encountered a bug where my application was crashing when trying to access an undefined property of an object. This was because I had forgotten to initialize the property before trying to access it. To fix this bug, I simply added a check to make sure the property was defined before trying to access it. This bug happens when we try to access a property of an object that has not been initialized. 
+
+6. 🔥 DEVELOPER TIP OF THE DAY
+   One powerful tip I learned today is to always use a linter and a code formatter in my development workflow. This helps catch errors and inconsistencies in my code and ensures that my code is readable and maintainable. It's also a good practice to write tests for my code to ensure that it works as expected.
+
+7. 🎯 TOMORROW'S GOALS
+   Tomorrow, I plan to work on implementing a new feature for my application that involves integrating with a third-party API. I'll need to research the API documentation and figure out how to make requests to the API from my application. I'm also planning to review some code that my colleague wrote and provide feedback on how to improve it. I'm looking forward to the challenge and the opportunity to learn something new.

@@ -1,0 +1,44 @@
+Dev Note - 2026-04-11T10:16:19.886Z
+========================================
+
+📅 DAILY DEV LOG
+================
+
+1. 🌅 DAY SUMMARY 
+Today was a productive Saturday, I spent most of my time working on a new feature for our company's web application. I'd say the day was around 8/10 in terms of productivity, with a few minor distractions here and there. As for my mood and energy, I'm feeling quite energized and motivated, probably due to the fact that I'm making good progress on this feature. I love the feeling of solving complex problems and learning new things, it's what keeps me going as a developer. The morning started off a bit slow, but as I dove deeper into the code, I found my flow and was able to make some significant progress. Overall, it was a great day to be a developer.
+
+2. 🛠️ WHAT I BUILT / WORKED ON TODAY 
+Today, I worked on implementing a new authentication system using JSON Web Tokens (JWT). The feature allows users to log in and authenticate using their email and password, and then receive a JWT token that can be used to access protected routes. I used React, Node.js, and Express.js to build this feature. One challenge I faced was figuring out how to properly store and manage the JWT tokens on the client-side, but I eventually solved it by using the `localStorage` API. Another challenge was implementing proper error handling and logging, which I solved by using a combination of try-catch blocks and a logging library. I also had to make sure that the authentication system was secure and followed best practices, which required some research and planning. The technologies used were JavaScript, React, Node.js, Express.js, and MongoDB. I had to learn about JWT and how to implement it in a real-world application.
+
+3. 📚 WHAT I LEARNED TODAY 
+Today, I learned about JSON Web Tokens (JWT) and how to implement them in a real-world application. JWT is a compact, URL-safe means of representing claims to be transferred between two parties. The token is digitally signed and contains a payload that can be verified and trusted. I learned how to generate, verify, and manage JWT tokens using the `jsonwebtoken` library in Node.js. This is useful because it provides a secure way to authenticate and authorize users in a web application. I also learned about the importance of keeping secrets and keys secure, and how to properly handle errors and exceptions in an authentication system. Additionally, I gained a deeper understanding of how to implement authentication and authorization in a web application using JWT. I now have a better understanding of the concept and how it can be applied in different scenarios.
+
+4. 💡 DAILY CODE PROBLEM 
+**Problem Title:** Validate Palindrome
+**Difficulty:** Easy
+**Problem Statement:** Given a string, determine if it is a palindrome, ignoring non-alphanumeric characters and case sensitivity.
+**Example Input and Output:**
+Input: "A man, a plan, a canal: Panama"
+Output: True
+Input: "Not a palindrome"
+Output: False
+My approach was to first remove all non-alphanumeric characters from the string, and then convert it to lowercase. I then compared the resulting string with its reverse, and if they were the same, I returned True, indicating that the string is a palindrome. Here is the full working solution in JavaScript:
+```javascript
+function isPalindrome(s) {
+    let cleaned = s.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
+    let reversed = cleaned.split('').reverse().join('');
+    return cleaned === reversed;
+}
+```
+Time complexity: O(n), where n is the length of the string.
+Space complexity: O(n), where n is the length of the string.
+This problem requires careful consideration of edge cases and a solid understanding of string manipulation in JavaScript.
+
+5. 🐛 BUG OF THE DAY 
+Today, I encountered a bug where the authentication system was not properly handling expired JWT tokens. The bug was caused by a misunderstanding of how the `jsonwebtoken` library handles token expiration. I fixed the bug by properly checking the expiration time of the token and refreshing it when necessary. This bug was difficult to identify because it only occurred under specific circumstances, but I was able to track it down using a combination of logging and debugging.
+
+6. 🔥 DEVELOPER TIP OF THE DAY 
+One powerful tip I learned today is to always carefully consider the security implications of any code I write. This includes properly handling errors and exceptions, validating user input, and keeping secrets and keys secure. By following this tip, I can ensure that my code is secure and reliable, which is essential for building high-quality software applications. Additionally, I should always use established libraries and frameworks to handle complex tasks, such as authentication and authorization.
+
+7. 🎯 TOMORROW'S GOALS 
+Tomorrow, I plan to continue working on the authentication system, implementing additional features such as password reset and account locking. I also want to start looking into using a more robust logging library to improve error handling and debugging. Additionally, I want to review and refactor some of the existing code to ensure it is clean, efficient, and adheres to best practices. I'm excited to see how the authentication system turns out and how it will improve the overall security and usability of our web application.
